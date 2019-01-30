@@ -1,0 +1,100 @@
+*{margin: 0px; padding: 0px;}
+
+#gridlayout{
+    
+    display:grid;
+   
+    width: 100%;
+    height: 100vh;
+
+    
+
+    grid-template-columns: 400px 500px 150px 1fr;
+    grid-template-rows: 200px 200px 1fr 1fr;
+    overflow: hidden;
+}
+
+.beach{
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+    object-position: top;
+
+}
+.krans{
+grid-column: 1/2;
+grid-row: 1/3;
+
+/* transition: transform 1s ease-in; */
+transition-duration: 10s;
+
+
+}
+
+.krans:hover{
+    transform: rotate(360deg);
+}
+
+.skygge{
+    grid-column: 1/2;
+    grid-row: 1/3; 
+}
+
+.stjerne{
+    grid-column: 3/4;
+    grid-row: 2/3;
+    opacity: 0.4;
+    transition: 4s;
+}
+.stjerne:hover{
+    opacity: 1;
+   
+}
+
+.surf{
+    grid-column: 3/-1;
+    grid-row: 1/3;
+    width: 100%;
+    
+    animation: scale-up-hor-right 2s;
+}
+
+.surf:hover{
+   animation: scale-down-hor-right 2s;
+   animation-fill-mode: forwards;
+    
+}
+
+    
+
+  @keyframes scale-up-hor-right {
+    0% {
+    
+              transform: scaleX(0.4);
+              transform-origin: 100% 100%;
+    }
+    100% {
+      
+              transform: scaleX(1);
+              transform-origin: 100% 100%;
+    }
+  }
+  @keyframes scale-down-hor-right {
+    0% {
+        transform: scaleX(1);
+        transform-origin: 100% 100%;
+              
+    }
+    100% {
+        transform: scaleX(0.2);
+        transform-origin: 100% 100%;
+              
+    }
+  }
+  
+
+
